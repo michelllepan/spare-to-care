@@ -37,7 +37,7 @@ class Welcome extends React.Component {
       <Wrapper>
         <Content>
           <Heading>A ${this.props.pledge.toFixed(2)} donation could...</Heading>
-          <Impact>provide lifesaving vaccinations for 234 children</Impact>
+          <Impact>provide lifesaving vaccinations for {Math.round(this.props.pledge * 54 / 10)} children</Impact>
         </Content>
       </Wrapper>
     )

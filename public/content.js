@@ -46,6 +46,7 @@ buttonAgain.onclick=clickHandle;
 
 function clickHandle(){
     let amount = parseFloat(buttonAgain.innerText.split("$")[2])
+    buttonAgain.style.cssText = "background-color:rgb(94, 158, 72);font-size:11px;border:0px;color:white;float:right;border-radius: 5px;z-index: 999; margin-top: 5px;"
     updateTotalAccum(amount)
     return false;
 }
@@ -62,7 +63,7 @@ function addButton(element, total){
     const buttonText = document.createTextNode(string);
     button.appendChild(buttonText);
     
-    button.style.cssText = "background-color:rgb(210, 88, 88);font-size:11px;border:0px;color:white;float:right;border-radius: 5px;z-index: 999;"
+    button.style.cssText = "background-color:rgb(210, 88, 88);font-size:11px;border:0px;color:white;float:right;border-radius: 5px;z-index: 999; margin-top: 5px;"
     
     element[element.length-1].insertAdjacentHTML('beforeend', button.outerHTML);
 

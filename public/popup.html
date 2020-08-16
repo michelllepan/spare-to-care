@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="stylesheet" href="https://use.typekit.net/rse5efl.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#ffffff" />
     <meta
@@ -25,10 +26,35 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <style>
+      body {
+        font-family: proxima-nova, sans-serif;
+        margin: 5;
+      }
+
+      p {
+        font-size: 14px;
+        text-align: center;
+      }
+
+      button {
+        color: #FFFFFF;
+        border: none;
+        font-weight: 600;
+        font-size: 14px;
+        padding: 7px 12px;
+        background: rgb(210, 88, 88);
+        border-radius: 5px;
+      }
+
+      button:hover{
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <a href="index.html" target="_blank"> View pledge + donate! </p>
+    <a href="index.html" target="_blank"><button>Go to Dashboard!</button></a>
   </body>
 </html>
