@@ -45,6 +45,7 @@ let buttonAgain = document.getElementById("stc-button");
 buttonAgain.onclick=clickHandle;
 
 function clickHandle(){
+    let amount = parseFloat(buttonAgain.innerText.split("$")[2])
     updateTotalAccum(amount)
     return false;
 }
