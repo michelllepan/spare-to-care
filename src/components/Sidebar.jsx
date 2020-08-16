@@ -6,6 +6,7 @@ import covidIcon from '../assets/covid.png';
 import justiceIcon from '../assets/justice.png';
 import humanitarianIcon from '../assets/humanitarian.png';
 
+
 const Wrapper = styled.div`
   width: 30%;
   margin: 30px;
@@ -14,7 +15,7 @@ const Wrapper = styled.div`
 const Amount = styled.p`
   font-size: 48px;
   font-weight: 600;
-  margin: 5px 0px 30px 0px;
+  margin: 5px 0px 45px 0px;
 `
 const Label = styled.p`
   font-size: 18px;
@@ -23,7 +24,7 @@ const Label = styled.p`
 const CategoryWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 25px 0px;
+  margin: 30px 0px;
 `
 const Icon = styled.div`
   display: flex;
@@ -52,17 +53,13 @@ const Charity = styled.p`
 
 
 class Sidebar extends React.Component {
- 
-  state = {
-    ingredients: []
-  }
 
   render() {
     return (
       <Wrapper>
         <Label>You've pledged</Label>
         <Amount>$35.00</Amount>
-        <Label>Choose a charity to donate to:</Label>
+        <Label>Choose a nonprofit to donate to:</Label>
         <CategoryWrapper>
           <Icon color="rgba(210, 88, 88, 0.1)"><img src={medicalIcon} alt="medical"/></Icon>
           <CategoryInfo>
