@@ -8,14 +8,14 @@ import humanitarianIcon from '../assets/humanitarian.png';
 
 
 const Wrapper = styled.div`
-  width: 30%;
+  width: 27%;
   margin: 30px;
 `
 
 const Amount = styled.p`
   font-size: 48px;
   font-weight: 600;
-  margin: 5px 0px 45px 0px;
+  margin: 5px 0px 30px 0px;
 `
 const Label = styled.p`
   font-size: 18px;
@@ -24,7 +24,7 @@ const Label = styled.p`
 const CategoryWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 30px 0px;
+  margin: 22px 0px;
 `
 const Icon = styled.div`
   display: flex;
@@ -48,6 +48,8 @@ const Charity = styled.p`
 
   &:hover {
     cursor: pointer;
+    color: ${props => props.color};
+    ${'' /* color: #777B7E; */}
   }
 `
 
@@ -58,37 +60,37 @@ class Sidebar extends React.Component {
     return (
       <Wrapper>
         <Label>You've pledged</Label>
-        <Amount>$35.00</Amount>
+        <Amount>${this.props.pledge.toFixed(2)}</Amount>
         <Label>Choose a nonprofit to donate to:</Label>
         <CategoryWrapper>
           <Icon color="rgba(210, 88, 88, 0.1)"><img src={medicalIcon} alt="medical"/></Icon>
           <CategoryInfo>
             <CategoryTitle>Medical</CategoryTitle>
-            <Charity onClick={() => this.props.handleSelect("St. Jude Children's Research Hospital")}>St. Jude Children's Research Hospital</Charity>
-            <Charity onClick={() => this.props.handleSelect("amfAR: The Foundation for AIDS Research")}>The Foundation for AIDS Research</Charity>
+            <Charity color="rgb(210, 88, 88)" onClick={() => this.props.handleSelect("St. Jude Children's Research Hospital")}>St. Jude Children's Research Hospital</Charity>
+            <Charity color="rgb(210, 88, 88)" onClick={() => this.props.handleSelect("amfAR: The Foundation for AIDS Research")}>The Foundation for AIDS Research</Charity>
           </CategoryInfo>
         </CategoryWrapper>
         <CategoryWrapper>
           <Icon color="rgba(94, 158, 72, 0.1)"><img src={covidIcon} alt="covid"/></Icon>
           <CategoryInfo>
             <CategoryTitle>COVID-19</CategoryTitle>
-            <Charity onClick={() => this.props.handleSelect("COVID-19 Response Fund (WHO)")}>COVID-19 Response Fund</Charity>
+            <Charity color="rgb(94, 158, 72)" onClick={() => this.props.handleSelect("COVID-19 Response Fund (WHO)")}>COVID-19 Response Fund</Charity>
           </CategoryInfo>
         </CategoryWrapper>
         <CategoryWrapper>
           <Icon color="rgba(88, 150, 185, 0.1)"><img src={justiceIcon} alt="justice"/></Icon>
           <CategoryInfo>
             <CategoryTitle>Social Justice</CategoryTitle>
-            <Charity onClick={() => this.props.handleSelect("Equal Justice Initiative")}>Equal Justice Initiative</Charity>
-            <Charity onClick={() => this.props.handleSelect("ACLU")}>ACLU</Charity>
+            <Charity color="rgb(88, 150, 185)" onClick={() => this.props.handleSelect("Equal Justice Initiative")}>Equal Justice Initiative</Charity>
+            <Charity color="rgb(88, 150, 185)" onClick={() => this.props.handleSelect("ACLU")}>ACLU</Charity>
           </CategoryInfo>
         </CategoryWrapper>
         <CategoryWrapper>
           <Icon color="rgba(138, 96, 181, 0.1)"><img src={humanitarianIcon} alt="humanitarian"/></Icon>
           <CategoryInfo>
             <CategoryTitle>Humanitarian</CategoryTitle>
-            <Charity onClick={() => this.props.handleSelect("Lebanese Red Cross")}>Lebanese Red Cross</Charity>
-            <Charity onClick={() => this.props.handleSelect("UNICEF")}>UNICEF</Charity>
+            <Charity color="rgb(138, 96, 181)" onClick={() => this.props.handleSelect("Lebanese Red Cross")}>Lebanese Red Cross</Charity>
+            <Charity color="rgb(138, 96, 181)" onClick={() => this.props.handleSelect("UNICEF")}>UNICEF</Charity>
           </CategoryInfo>
         </CategoryWrapper>
       </Wrapper>

@@ -3,13 +3,13 @@ export default function changeDonationValues(name, change){
     switch(name) {
         //first 3 cases work with id=amount
         case "Equal Justice Initiative":
-            window.location.href = window.location.href = "https://support.eji.org/give/153413/#!/donation/checkout?amount=" + change;
+            window.open('https://support.eji.org/give/153413/#!/donation/checkout?amount=' + change, '_blank'); 
             break;
         case "St. Jude Children's Research Hospital":
-            window.location.href = "https://www.stjude.org/donate/donate-to-st-jude.html?sc_icid=header-btn-donate-now?amount=" + change;
+            window.open('https://www.stjude.org/donate/donate-to-st-jude.html?sc_icid=header-btn-donate-now?amount=' + change, '_blank'); 
             break;
         case "UNICEF":
-            window.location.href = "https://www.unicefusa.org/?form=donate?amount=" + change;
+            window.open('https://www.unicefusa.org/?form=donate?amount=' + change, '_blank'); 
             break;
     }
 
