@@ -41,37 +41,31 @@ if (element_ama.length !== 0){
     addButton(element_etsy, total)
 }
 
-
+let buttonAgain = document.getElementById("stc-button");
+buttonAgain.onclick=clickHandle;
 
 function clickHandle(){
-    console.log("HERE AGAIN");
-    updateTotalAccum(4);
+    updateTotalAccum(amount)
+    return false;
 }
 
 function addButton(element, total){
     //let element0 = document.getElementsByClassName("a-normal a-align-bottom a-spacing-none a-size-small")
     let button = document.createElement('button')
     button.type = "button"
+    button.id = "stc-button"
     button.onload = "onLoad()"
     let info = calculateRounding(total)
     
     const string = "round up to $" + info[0] + " and donate $" + info[1]
     const buttonText = document.createTextNode(string);
     button.appendChild(buttonText);
-    button.onclick = function() {
-        console.log("HERE AGAIN");
-    }
-    
-    // let clickHandle = function() {console.log("HERE AGAIN");
-    //     updateTotalAccum(4);//info[0])
-    // }
     
     button.style.cssText = "background-color:rgb(210, 88, 88);font-size:11px;border:0px;color:white;float:right;border-radius: 5px;z-index: 999;"
     
     element[element.length-1].insertAdjacentHTML('beforeend', button.outerHTML);
 
-    // element[element.length-1].insertAdjacentHTML('beforeend', '<button type="button" onclick="clickHandle()" style="background-color: rgb(210, 88, 88); font-size: 11px; border: 0px; color: white; float: right; border-radius: 5px; z-index: 999;">string</button>');
-    // element[element.length-1].insertAdjacentHTML('beforeend', '<script type="text/javascript">function clickHandle() {console.log("HERE")}</script>');
+
 }
 
 /**
