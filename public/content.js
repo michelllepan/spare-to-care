@@ -17,6 +17,11 @@ main();
 let element_ama = document.getElementsByClassName("a-normal a-align-bottom a-spacing-none a-size-small")
 //check if the person is on the checkout page TARGET
 let element_tar = document.getElementsByClassName("Row-uds8za-0 OrderSummary__StyledRow-sc-1rgy0o0-0 hICeKz h-padding-a-tight")
+//check if the person is on the checkout page EBAY
+let element_ebay = document.getElementsByClassName("summary-item")
+//check if the person is on the checkout page ETSY
+let element_etsy = document.getElementsByClassName('multi-shop-cart-payment payment-container-shadow wt-rounded-03 wt-p-md-3')
+
 if (element_ama.length !== 0){
     //add the button to make a donation and update the accumulated amount
     //get the order total (AMAZON ONLY)
@@ -26,24 +31,47 @@ if (element_ama.length !== 0){
     //get the order total (TARGET ONLY)
     let total = document.getElementsByClassName("h-text-lg h-text-bold")[1].textContent
     addButton(element_tar, total)
+} else if (element_ebay.length !== 0){
+    //get the order total (EBAY ONLY)
+    let total = document.getElementsByClassName("text-display")[1].textContent
+    addButton(element_ebay, total)
+} else if (element_etsy.length !== 0){
+    //get the order total (ETSY ONLY)
+    let total = document.getElementsByClassName("wt-p-xs-0 wt-b-xs-none wt-text-right-xs wt-text-body-01 wt-text-black wt-no-wrap")[0].textContent
+    addButton(element_etsy, total)
 }
-    
+
+
+
+function clickHandle(){
+    console.log("HERE AGAIN");
+    updateTotalAccum(4);
+}
+
 function addButton(element, total){
     //let element0 = document.getElementsByClassName("a-normal a-align-bottom a-spacing-none a-size-small")
     let button = document.createElement('button')
+    button.type = "button"
+    button.onload = "onLoad()"
     let info = calculateRounding(total)
-    ///
+    
     const string = "round up to $" + info[0] + " and donate $" + info[1]
     const buttonText = document.createTextNode(string);
     button.appendChild(buttonText);
-    button.onclick = function(){
-        //update the total accumulated by the donation amount
-        console.log("HERE")
-        updateTotalAccum(4)//info[0])
+    button.onclick = function() {
+        console.log("HERE AGAIN");
     }
-    button.style.cssText = "background-color:rgb(210, 88, 88);font-size:11px;border:0px;color:white;float:right;border-radius: 5px;"
-    ///
+    
+    // let clickHandle = function() {console.log("HERE AGAIN");
+    //     updateTotalAccum(4);//info[0])
+    // }
+    
+    button.style.cssText = "background-color:rgb(210, 88, 88);font-size:11px;border:0px;color:white;float:right;border-radius: 5px;z-index: 999;"
+    
     element[element.length-1].insertAdjacentHTML('beforeend', button.outerHTML);
+
+    // element[element.length-1].insertAdjacentHTML('beforeend', '<button type="button" onclick="clickHandle()" style="background-color: rgb(210, 88, 88); font-size: 11px; border: 0px; color: white; float: right; border-radius: 5px; z-index: 999;">string</button>');
+    // element[element.length-1].insertAdjacentHTML('beforeend', '<script type="text/javascript">function clickHandle() {console.log("HERE")}</script>');
 }
 
 /**
