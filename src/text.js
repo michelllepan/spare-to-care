@@ -3,7 +3,7 @@
 class AutoFill{
 
 
-    
+     
     function getLink(){
         if(button is on st jude page or button id is st jude or smt){
             window.location.href = "";
@@ -34,7 +34,8 @@ class AutoFill{
             }
 
             DocumentFragment.querySelectorAll('input[type=number').forEach(domNode => {
-                if(domNode.attributes('className') == /* unique class of charity */){
+                if(do
+                  mNode.attributes('className') == /* unique class of charity */){
                     domNode.value = change;
                 }else if(domNode.attributes('className') == /* unique class of charity */){
                     domNode.value = change;
