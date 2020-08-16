@@ -40,25 +40,26 @@ export default function changeDonationValues(name){
 
         if(s === "Equal Justice Initiative" || s === "St. Jude Children's Research Hospital" || s === "UNICEF"){
             document.getElementsById("amount").value = change;
-        }else if(s === "amfAR: The Foundation for AIDS Research"){
-            document.getElementsById(/* unique id of charity */).value = change;
-        }else if(s === "COVID-19 Response Fund (WHO)"){
-            document.getElementsById(/* unique id of charity */).value = change;
-        }else if(s === "ACLU"){
-            document.getElementsById(/* unique id of charity */).value = change;
-        }else if(s === "Lebanese Red Cross"){
-            document.getElementsById(/* unique id of charity */).value = change;
         }
+        // }else if(s === "amfAR: The Foundation for AIDS Research"){
+        //     document.getElementsById(/* unique id of charity */).value = change;
+        // }else if(s === "COVID-19 Response Fund (WHO)"){
+        //     document.getElementsById(/* unique id of charity */).value = change;
+        // }else if(s === "ACLU"){
+        //     document.getElementsById(/* unique id of charity */).value = change;
+        // }else if(s === "Lebanese Red Cross"){
+        //     document.getElementsById(/* unique id of charity */).value = change;
+        // }
 
-        DocumentFragment.querySelectorAll('input[type=number').forEach(domNode => {
-            if(domNode.attributes('className') == /* unique class of charity */){
-                domNode.value = change;
-            }else if(domNode.attributes('className') == /* unique class of charity */){
-                domNode.value = change;
-            }else if(domNode.attributes('className') == /* unique class of charity */){
-                domNode.value = change;
-            }
-        }); 
+        // DocumentFragment.querySelectorAll('input[type=number').forEach(domNode => {
+        //     if(domNode.attributes('className') === /* unique class of charity */){
+        //         domNode.value = change;
+        //     }else if(domNode.attributes('className') === /* unique class of charity */){
+        //         domNode.value = change;
+        //     }else if(domNode.attributes('className') === /* unique class of charity */){
+        //         domNode.value = change;
+        //     }
+        // }); 
 
 
     });
