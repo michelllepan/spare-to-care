@@ -1,6 +1,4 @@
-export default function changeDonationValues(name){
-    
-    const change = 1620;
+export default function changeDonationValues(name, change){
 
     switch(name) {
         //first 3 cases work with id=amount
