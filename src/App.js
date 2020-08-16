@@ -1,3 +1,5 @@
+/* global chrome */
+
 import React from 'react';
 import './App.css';
 import Sidebar from './components/Sidebar';
@@ -125,6 +127,10 @@ class App extends React.Component {
       }
     ],
     selected: null
+  }
+
+  componentDidMount = () => {
+    chrome.storage.local.get(["accumulated"], (result) => this.setState({pledge: result.accumulated}));
   }
 
   getColor() {
